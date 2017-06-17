@@ -16,4 +16,3 @@ In order to get virtual env working you'll need to do:
 
 to set up the virtual env.
 
-This is just a test, it wil be removed in a few.
