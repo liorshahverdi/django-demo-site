@@ -73,11 +73,11 @@ class AreaCodeLookup(models.Model):
     longitude = models.CharField(max_length=200)
 
     def __init__(self, area_code, city, state, latitude, longitude):
-	self.area_code = area_code
-	self.city = city
-	self.state = state
-	self.latitude = latitude
-	self.longitude = longitude
+        self.area_code = area_code
+        self.city = city
+        self.state = state
+        self.latitude = latitude
+        self.longitude = longitude
 
 
 class BackpageAdInfo(models.Model):
@@ -112,18 +112,18 @@ class BackpageAdInfo(models.Model):
     url = models.CharField(max_length=200)
 
     def __init__(self, url, ad_title, phone_number, ad_body, location, latitude, longitude, photos, post_id, timestamp, city, state):
-	self.url = url
-	self.ad_title = ad_title
-	self.phone_number = phone_number
-	self.location = location
-	self.latitude = latitude
-	self.longitude = longitude
-	self.ad_body = ad_body
-	self.photos = photos
-	self.post_id = post_id
-	self.timestamp = timestamp
-	self.city = city
-	self.state = state
+        self.url = url
+        self.ad_title = ad_title
+        self.phone_number = phone_number
+        self.location = location
+        self.latitude = latitude
+        self.longitude = longitude
+        self.ad_body = ad_body
+        self.photos = photos
+        self.post_id = post_id
+        self.timestamp = timestamp
+        self.city = city
+        self.state = state
         
 
 class Backpage(models.Model):
@@ -141,5 +141,5 @@ class Backpage(models.Model):
     frequency = models.CharField(max_length=200)
 
     def __init__(self, timestamp, frequency):
-	self.timestamp = timestamp
-	self.frequency = frequency
+        self.timestamp = timestamp
+        self.frequency = frequency
