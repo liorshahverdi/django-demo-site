@@ -54,30 +54,30 @@ class AreaCodeLookup(models.Model):
     Area code and it's corresponding township.
     From there geopy provides the lookup to latitude, longitude
 
-	Because location may not be unique - there could be multiple towns with the same name,
-	there is not 100% guarantee all lookups will be accurate.
+    Because location may not be unique - there could be multiple towns with the same name,
+    there is not 100% guarantee all lookups will be accurate.
 
-	Source: https://www.allareacodes.com/
-	parameters:
-	@area_code - the area code from a phone number
-	@city - a string city
-	@state - a string state
-	@latitude - latitude for the area code
-	@longitude - longitude for the area code
-"""
+    Source: https://www.allareacodes.com/
+    parameters:
+    @area_code - the area code from a phone number
+    @city - a string city
+    @state - a string state
+    @latitude - latitude for the area code
+    @longitude - longitude for the area code
+    """
 
     area_code = models.CharField(max_length=200)
-	city = models.CharField(max_length=200)
-	state = models.CharField(max_length=200)
-	latitude = models.CharField(max_length=200)
-	longitude = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    state = models.CharField(max_length=200)
+    latitude = models.CharField(max_length=200)
+    longitude = models.CharField(max_length=200)
 
-	def __init__(self, area_code, city, state, latitude, longitude):
-		self.area_code = area_code
-		self.city = city
-		self.state = state
-		self.latitude = latitude
-		self.longitude = longitude
+    def __init__(self, area_code, city, state, latitude, longitude):
+	self.area_code = area_code
+	self.city = city
+	self.state = state
+	self.latitude = latitude
+	self.longitude = longitude
 
 
 """
