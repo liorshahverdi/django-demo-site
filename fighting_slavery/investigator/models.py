@@ -80,65 +80,66 @@ class AreaCodeLookup(models.Model):
 	self.longitude = longitude
 
 
-"""
-	This model gives us a set of specific information from each add scraped from backpage.
-
-	parameters:
-	@ad_title - used primarily to uniquely identify package ads - since titles are unique
-	@phone_number - the phone number used in the ad, can be empty. This number is stored as a 
-	string since it should be thought of as immutable.
-	@city - the city the ad is from
-	@state - the state the ad is from
-	@location - the location mentioned in the advertisement
-	@latitude - latitude derived from the location mentioned in the advertisement
-	@longitude - longitude derived from the location mentioned in the advertisement
-	@ad_body - the long form text in the ad
-	@photos - a filepath link to the set of pictures downloaded from the ad
-	@post_id - an id for each backpage post from backpage
-	@timestamp - when the ad was scraped
-	@url - the url of the scraped ad
-"""
 class BackpageAdInfo(models.Model):
-	ad_title = models.CharField(max_length=200)
-	phone_number = models.CharField(max_length=200)
-	location = models.CharField(max_length=200)
-	latitude = models.CharField(max_length=200)
-	longitude = models.CharField(max_length=200)
-	ad_body = models.CharField(max_length=200)
-	photos = models.CharField(max_length=200)
-	post_id = models.CharField(max_length=200)
-	timestamp = models.DateTimeField('backpage_ad_info_timestamp')
-	url = models.CharField(max_length=200)
+    """
+    This model gives us a set of specific information from each add scraped from backpage.
+    
+    parameters:
+    @ad_title - used primarily to uniquely identify package ads - since titles are unique
+    @phone_number - the phone number used in the ad, can be empty. This number is stored as a 
+    string since it should be thought of as immutable.
+    @city - the city the ad is from
+    @state - the state the ad is from
+    @location - the location mentioned in the advertisement
+    @latitude - latitude derived from the location mentioned in the advertisement
+    @longitude - longitude derived from the location mentioned in the advertisement
+    @ad_body - the long form text in the ad
+    @photos - a filepath link to the set of pictures downloaded from the ad
+    @post_id - an id for each backpage post from backpage
+    @timestamp - when the ad was scraped
+    @url - the url of the scraped ad
+    """
 
-	def __init__(self, url, ad_title, phone_number, ad_body, location, latitude, longitude, photos, post_id, timestamp, city, state):
-		self.url = url
-		self.ad_title = ad_title
-		self.phone_number = phone_number
-		self.location = location
-		self.latitude = latitude
-		self.longitude = longitude
-		self.ad_body = ad_body
-		self.photos = photos
-		self.post_id = post_id
-		self.timestamp = timestamp
-		self.city = city
-		self.state = state
+    ad_title = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
+    latitude = models.CharField(max_length=200)
+    longitude = models.CharField(max_length=200)
+    ad_body = models.CharField(max_length=200)
+    photos = models.CharField(max_length=200)
+    post_id = models.CharField(max_length=200)
+    timestamp = models.DateTimeField('backpage_ad_info_timestamp')
+    url = models.CharField(max_length=200)
 
+    def __init__(self, url, ad_title, phone_number, ad_body, location, latitude, longitude, photos, post_id, timestamp, city, state):
+	self.url = url
+	self.ad_title = ad_title
+	self.phone_number = phone_number
+	self.location = location
+	self.latitude = latitude
+	self.longitude = longitude
+	self.ad_body = ad_body
+	self.photos = photos
+	self.post_id = post_id
+	self.timestamp = timestamp
+	self.city = city
+	self.state = state
+        
 
-"""
-	This model gives us high level information about backpage, the website.
-	It is used to determine some metrics found in lectures/scraping_the_web.md 
-
-	parameters:
-	@timestamp - this is the time at which the content was scraped, it is assumed scrapers will run all the time,
-	therefore the scrape time should be accurate to within an hour of scraping, this is used in some of the metrics
-	for analysis.
-	@frequency - this is the number of ads scraped at @timestamp and is used in many of the metrics for the scraper.
-"""
 class Backpage(models.Model):
-	timestamp = models.DateTimeField('backpage_timestamp')
-	frequency = models.CharField(max_length=200)
+    """
+    This model gives us high level information about backpage, the website.
+    It is used to determine some metrics found in lectures/scraping_the_web.md 
 
-	def __init__(self, timestamp, frequency):
-		self.timestamp = timestamp
-		self.frequency = frequency
+    parameters:
+    @timestamp - this is the time at which the content was scraped, it is assumed scrapers will run all the time,
+    therefore the scrape time should be accurate to within an hour of scraping, this is used in some of the metrics
+    for analysis.
+    @frequency - this is the number of ads scraped at @timestamp and is used in many of the metrics for the scraper.
+    """
+    timestamp = models.DateTimeField('backpage_timestamp')
+    frequency = models.CharField(max_length=200)
+
+    def __init__(self, timestamp, frequency):
+	self.timestamp = timestamp
+	self.frequency = frequency
