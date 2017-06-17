@@ -85,3 +85,11 @@ In order to get virtual env working you'll need to do:
 
 to set up the virtual env.
 
+
+### Setting up the database
+
+Create database in postgres - `createdb hacking_against_slavery_db`
+
+Make migrations in Django - `python manage.py makemigrations investigator`
+
+Migrate the database in Django - `python manage.py migrate investigator`
