@@ -48,9 +48,9 @@ There are two major things of importance when you are collaborating (in life, no
 
 For this project, we'll be creating pull requests and merging pull requests via github.  There are nice friendly buttons that look like the following:
 
-![PR button](https://github.com/EricSchles/django-demo-site/blob/master/docs/images/pr_button.png)
+![PR button](https://github.com/hackingagainstslavery/django-demo-site/blob/master/docs/images/pr_button.png)
 
-![Merge button](https://github.com/EricSchles/django-demo-site/blob/master/docs/images/merge_button.png)
+![Merge button](https://github.com/hackingagainstslavery/django-demo-site/blob/master/docs/images/merge_button.png)
 
 You'll be creating pull requests from your fork.  And you'll be reviewing pull requests, also from your fork.  This keeps the canonical source pollution free, until after review!  Which is super good times magical fantastic.  In order to review changes, you'll be making use of git's command line review.
 
@@ -85,3 +85,21 @@ In order to get virtual env working you'll need to do:
 
 to set up the virtual env.
 
+
+### Setting up the database
+
+Create database user - `createuser -P -s -e -d admin_user` 
+
+*Note*: local user password is 1234
+
+Create database in postgres - `createdb hacking_against_slavery_db -U admin_user`
+
+Make migrations in Django - `python manage.py makemigrations`
+
+Migrate the database in Django - `python manage.py migrate`
+
+### For Migrating individual models
+
+Make migrations in Django - `python manage.py makemigrations investigator`
+
+Migrate the database in Django - `python manage.py migrate investigator`
