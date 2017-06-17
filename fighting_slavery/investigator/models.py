@@ -1,15 +1,14 @@
-
-
 from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-"""
-	This model stores the lookup for an image to text from Keras Models (defined in image_processing.py)
-	parameters:
-	@file_name - the filename being processed
-	@labels - the set of labels associated with the filename
-	@state - the state or province the ad appeared in
+class ImageToText(models.Model):
+    """
+    This model stores the lookup for an image to text from Keras Models (defined in image_processing.py)
+    parameters:
+    @file_name - the filename being processed
+    @labels - the set of labels associated with the filename
+    @state - the state or province the ad appeared in
     @city - the city or town the ad appeared in
     @location - the location parsed from the ad
     @url - the url of the ad
@@ -18,8 +17,8 @@ from django.utils import timezone
     @latitude - latitude parsed from the ad
     @longitude - longitude parsed from the ad
     @image_url - image_url used for image lookup
-"""
-class ImageToText(models.Model):
+    """
+    
     filename = models.CharField(max_length=200)
     labels = models.CharField(max_length=200)
     state = models.CharField(max_length=200)
@@ -34,10 +33,10 @@ class ImageToText(models.Model):
     throw_away = models.CharField(max_length=200)
 
     def __init__(self, image_url, filename, labels, state, city, location, url, timestamp, phone_number, latitude, longitude, throw_away):
-    	self.image_url = image_url
-    	self.filename = filename
-    	self.labels = labels
-    	self.state = state
+        self.image_url = image_url
+        self.filename = filename
+        self.labels = labels
+        self.state = state
         self.city = city
         self.location = location
         self.url = url
@@ -48,11 +47,12 @@ class ImageToText(models.Model):
         self.throw_away = throw_away
 
 
-"""
-	This model provides a look up for phone number area codes and aids in converting them to latitude, longitude.
-	Specifically this mapping provides: 
-	Area code and it's corresponding township.
-	From there geopy provides the lookup to latitude, longitude
+class AreaCodeLookup(models.Model):
+    """
+    This model provides a look up for phone number area codes and aids in converting them to latitude, longitude.
+    Specifically this mapping provides: 
+    Area code and it's corresponding township.
+    From there geopy provides the lookup to latitude, longitude
 
 	Because location may not be unique - there could be multiple towns with the same name,
 	there is not 100% guarantee all lookups will be accurate.
@@ -65,8 +65,8 @@ class ImageToText(models.Model):
 	@latitude - latitude for the area code
 	@longitude - longitude for the area code
 """
-class AreaCodeLookup(models.Model):
-	area_code = models.CharField(max_length=200)
+
+    area_code = models.CharField(max_length=200)
 	city = models.CharField(max_length=200)
 	state = models.CharField(max_length=200)
 	latitude = models.CharField(max_length=200)
