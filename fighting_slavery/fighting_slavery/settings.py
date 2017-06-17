@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'hacking_against_slavery_db',
-        'USER': 'lior',
-        'PASSWORD': 'qweRp3455',
+        'USER': 'admin_user',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '5432',
     }
