@@ -50,7 +50,7 @@ For this project, we'll be creating pull requests and merging pull requests via 
 
 PR button goes here
 
-Merge button goes here
+![Merge button](https://github.com/EricSchles/django-demo-site/blob/master/merge_button.png)
 
 You'll be creating pull requests from your fork.  And you'll be reviewing pull requests, also from your fork.  This keeps the canonical source pollution free, until after review!  Which is super good times magical fantastic.  In order to review changes, you'll be making use of git's command line review.
 
