@@ -48,7 +48,7 @@ There are two major things of importance when you are collaborating (in life, no
 
 For this project, we'll be creating pull requests and merging pull requests via github.  There are nice friendly buttons that look like the following:
 
-PR button goes here
+![PR button](https://github.com/EricSchles/django-demo-site/blob/master/pr_button.png)
 
 ![Merge button](https://github.com/EricSchles/django-demo-site/blob/master/merge_button.png)
 
