@@ -42,6 +42,39 @@ To pull in changes from the canonical, it's best to do the following:
 
 `git pull canonical master` - this will pull down any changes from the canonical master into your master.  You probably shouldn't pull in from another branch, as master is the only place that change should _ever_ be happening on canonical.  That's right, there is no dev branch here.  This way, we know that the branch on the canonical is authoritative at any given moment. If you are trying to push to dev, that's where you're local dev branch comes in, but more on that later.
 
+ _* Working with Pull Requests *_
+
+There are two major things of importance when you are collaborating (in life, not just on github).  Creating pull requests and reviewing pull requests.  These are of equal importance!  Because creating pull requests is like talking (or writing) and reviewing pull requests is like listening (or reading).  So, how do we do either?
+
+For this project, we'll be creating pull requests and merging pull requests via github.  There are nice friendly buttons that look like the following:
+
+PR button goes here
+
+Merge button goes here
+
+You'll be creating pull requests from your fork.  And you'll be reviewing pull requests, also from your fork.  This keeps the canonical source pollution free, until after review!  Which is super good times magical fantastic.  In order to review changes, you'll be making use of git's command line review.
+
+```
+git checkout -b Github User Name-branch name branch name
+git pull https://github.com/Github User Name/reponame.git branch name
+```
+
+You should then run the changes (if possible check off all of the following options):
+
+* Run the server
+* Run all the tests the person you are reviewing wrote (as well as all other tests). 
+	* If there are no tests, go ahead and write some for the person and then publicly shame them
+	for not using test best practices (tests are important!)
+* If possible, refactor the source code (source code can *almost* always be refactored)
+
+Then push your changes to the Pull request (if you had to make any).  Otherwise go ahead and leave a nice comment, and then merge in the changes with the big green merge button!
+
+If you did make changes to the Pull Request, make a comment with the github user's name (@GithubUserName).  And then ping them to make sure they see it.  After that, go ahead and get them to review your changes.  If everything looks good, they'll go ahead and merge their changes as well as your updated changes.
+
+Rule of thumb:  The last person to make changes to a Pull Request, should not merge that pull request in.  
+
+Obviously best practice falls away under deadlines (duh).
+
 ### Setting up virtual env
 
 Python 3.6 is cutting edge.  As a result some things are "wonky".  
