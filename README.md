@@ -48,9 +48,9 @@ There are two major things of importance when you are collaborating (in life, no
 
 For this project, we'll be creating pull requests and merging pull requests via github.  There are nice friendly buttons that look like the following:
 
-![PR button](https://github.com/EricSchles/django-demo-site/blob/master/docs/images/pr_button.png)
+![PR button](https://github.com/hackingagainstslavery/django-demo-site/blob/master/docs/images/pr_button.png)
 
-![Merge button](https://github.com/EricSchles/django-demo-site/blob/master/docs/images/merge_button.png)
+![Merge button](https://github.com/hackingagainstslavery/django-demo-site/blob/master/docs/images/merge_button.png)
 
 You'll be creating pull requests from your fork.  And you'll be reviewing pull requests, also from your fork.  This keeps the canonical source pollution free, until after review!  Which is super good times magical fantastic.  In order to review changes, you'll be making use of git's command line review.
 
